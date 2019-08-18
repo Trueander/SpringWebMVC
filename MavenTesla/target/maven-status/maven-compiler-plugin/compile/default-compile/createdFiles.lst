@@ -1,0 +1,14 @@
+pe\idat\WebConfig.class
+pe\idat\dao\ColegioDao.class
+pe\idat\controller\HomeController.class
+pe\idat\model\Colegio.class
+pe\idat\dao\ProfesorDao.class
+pe\idat\service\ColegioService.class
+pe\idat\service\ProfesorServiceImpl.class
+pe\idat\service\ColegioServiceImpl.class
+pe\idat\dao\ColegioDaoImpl.class
+pe\idat\service\ProfesorService.class
+pe\idat\WebInitializer.class
+pe\idat\dao\ProfesorDaoImpl.class
+pe\idat\model\Profesor.class
+pe\idat\controller\ColegioController.class

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>pe.idat</groupId>
+  <artifactId>MavenTesla</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  
+  <!-- se define de tipo de app -->
+  <packaging>war</packaging>
+
+  <name>MavenTesla</name>
+  <!-- FIXME change it to the project's website -->
+  <url>http://www.example.com</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <!-- uso de spring mvc -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-webmvc</artifactId>
+        <version>4.3.20.RELEASE</version>
+    </dependency>
+    
+    <!-- uso de servlets (controladores) -->
+    <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>javax.servlet-api</artifactId>
+        <version>4.0.0</version>
+        <scope>provided</scope>
+    </dependency>
+    
+    <!-- uso de JSTL (code java in page jsp) -->
+    <dependency>
+        <groupId>jstl</groupId>
+        <artifactId>jstl</artifactId>
+        <version>1.2</version>
+    </dependency>
+    
+    <!-- uso de JPA Hibernate -->
+    <dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-entitymanager</artifactId>
+        <version>4.3.10.Final</version>
+    </dependency>
+    
+    <!-- uso spring ORM (convierte clases a tablas) -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-orm</artifactId>
+        <version>4.3.20.RELEASE</version>
+    </dependency>
+    
+    <!-- uso de pool de conexiones (evitar tráfico de visitas de páginas ) -->
+    <dependency>
+        <groupId>c3p0</groupId>
+        <artifactId>c3p0</artifactId>
+        <version>0.9.1.2</version>
+    </dependency>
+    
+    <!-- uso de BD MySQL version 5 -->
+    <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>5.1.45</version>
+    </dependency>
+    
+  </dependencies>
+
+  <build>
+      
+      <plugins>
+          
+          <!-- plugin para usar el servidor web tomcat7 -->
+          <plugin>
+            <groupId>org.apache.tomcat.maven</groupId>
+            <artifactId>tomcat7-maven-plugin</artifactId>
+            <version>2.1</version> <!-- para puertos diferentes de 8080 -->
+            <configuration>
+              <port>8090</port> <!-- se define el puerto -->
+              <path>/idat</path> <!-- se define el path principal -->
+            </configuration>
+          </plugin>
+          
+          <!-- plugin para evitar el uso del archivo web.xml -->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-war-plugin</artifactId>
+            <configuration>
+                <failOnMissingWebXml>false</failOnMissingWebXml>
+            </configuration>
+          </plugin>
+      </plugins>
+      
+  </build>
+  
+</project>
